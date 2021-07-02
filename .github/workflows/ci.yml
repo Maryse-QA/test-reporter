@@ -20,17 +20,17 @@ jobs:
       - run: npm run lint
       - run: npm test
 
-      - name: Upload test results
+      - name: Upload dorny test results
         if: success() || failure()
         uses: actions/upload-artifact@v2
         with:
-          name: test-results
+          name: dorny-test-results
           path: __tests__/__results__/*.xml
 
-      - name: Create test report
+      - name: Create dorny test report
         uses: ./
         if: success() || failure()
         with:
-          name: JEST Tests
+          name: JEST dorny Tests
           path: __tests__/__results__/*.xml
           reporter: jest-junit
