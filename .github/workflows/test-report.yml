@@ -8,13 +8,13 @@ on:
 
 jobs:
   report:
-    name: Workflow Report Tests
+    name: Workflow dorny Tests
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: ./
       with:
         artifact: test-results
-        name: Workflow Report
+        name: Workflow dorny Report
         path: '*.xml'
         reporter: jest-junit
