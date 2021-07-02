@@ -8,7 +8,7 @@ on:
 
 jobs:
   report:
-    name: Workflow test
+    name: Workflow Report Tests
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
