@@ -8,7 +8,7 @@ import {normalizeFilePath} from '../src/utils/path-utils'
 
 describe('jest-junit tests', () => {
   it('produces empty test run result when there are no test cases', async () => {
-    const fixturePath = path.join(__dirname, 'fixtures', 'empty', 'jest-junit.xml')
+    const fixturePath = path.join(__dirname, 'fixtures', 'empty', 'result.xml')
     const filePath = normalizeFilePath(path.relative(__dirname, fixturePath))
     const fileContent = fs.readFileSync(fixturePath, {encoding: 'utf8'})
 
@@ -24,7 +24,7 @@ describe('jest-junit tests', () => {
   })
 
   it('report from ./reports/jest test results matches snapshot', async () => {
-    const fixturePath = path.join(__dirname, 'fixtures', 'jest-junit.xml')
+    const fixturePath = path.join(__dirname, 'fixtures', 'result.xml')
     const outputPath = path.join(__dirname, '__outputs__', 'jest-junit.md')
     const filePath = normalizeFilePath(path.relative(__dirname, fixturePath))
     const fileContent = fs.readFileSync(fixturePath, {encoding: 'utf8'})
